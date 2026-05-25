@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TopBar } from '../design-system';
 import { useAuth } from '../AuthContext';
 
 export default function Login() {
@@ -53,13 +52,35 @@ export default function Login() {
   return (
     <div className="page-center">
       <div className="login-card card">
-        <TopBar />
-        <h1>{isRegister ? 'Create account' : 'Login'}</h1>
-        <p className="login-help">
-          {isRegister
-            ? 'Register a new account using your email and a secure password.'
-            : 'Sign in with your registered email and password to access the job portal.'}
-        </p>
+        <div className="login-card__top">
+          <div className="login-card__brand-icon">J</div>
+          <div>
+            <p className="login-card__eyebrow">Log in with your work email</p>
+            <h1>{isRegister ? 'Create account' : 'Sign in'}</h1>
+            <p className="login-card__subtitle">
+              {isRegister
+                ? 'Create an account with your work email to get started.'
+                : 'Use your work email to log in to the job notification portal.'}
+            </p>
+          </div>
+        </div>
+
+        {!isRegister && (
+          <button
+            type="button"
+            className="btn btn-secondary login-google-btn"
+            onClick={() => setError('Google sign-in is not configured yet. Please use email and password.')}
+          >
+            <span className="login-google-btn__icon">G</span>
+            Log in with Google
+          </button>
+        )}
+
+        {!isRegister && (
+          <div className="login-divider">
+            <span>OR</span>
+          </div>
+        )}
 
         <form className="login-form" onSubmit={handleSubmit}>
           <div className="login-form__field">
@@ -88,6 +109,19 @@ export default function Login() {
             />
           </div>
 
+          <div className="login-aux">
+            <div />
+            {!isRegister && (
+              <button
+                type="button"
+                className="login-forgot"
+                onClick={() => setError('Password reset is not available in this demo.')}
+              >
+                Forgot password?
+              </button>
+            )}
+          </div>
+
           {error && <p className="login-error">{error}</p>}
 
           <div className="login-form__actions">
@@ -98,7 +132,7 @@ export default function Login() {
                   : 'Signing in…'
                 : isRegister
                 ? 'Sign up'
-                : 'Sign in'}
+                : 'Log in'}
             </button>
           </div>
         </form>
