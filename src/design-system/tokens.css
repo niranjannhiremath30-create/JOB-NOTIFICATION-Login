@@ -1,0 +1,66 @@
+/**
+ * Job Notification App — Design System Tokens
+ * 
+ * Maximum 4 colors across entire UI.
+ * Spacing: 8px, 16px, 24px, 40px, 64px only.
+ */
+
+:root {
+  /* ─── Colors ───────────────────────────────────────────────────────────── */
+  --color-bg: #fbf7ed;
+  --color-surface: #ffffff;
+  --color-text: #1b2126;
+  --color-accent: #bb922c;
+  --color-success: #4d7d4e;
+  --color-warning: #c08812;
+  
+  /* Text variations (derived from primary) */
+  --color-text-muted: #5f656b;
+  --color-text-subtle: #7a7f84;
+  
+  /* Border (derived from text for consistency) */
+  --color-border: rgba(177, 142, 78, 0.25);
+  --color-border-focus: #bb922c;
+  
+  /* ─── Typography ───────────────────────────────────────────────────────── */
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-sans: 'Inter', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  
+  --text-max-width: 740px;
+  --line-height-body: 1.75;
+  --line-height-heading: 1.2;
+  
+  /* Headings — Serif, large, generous spacing */
+  --size-h1: 3rem;
+  --size-h2: 2.25rem;
+  --size-h3: 1.6rem;
+  --size-h4: 1.2rem;
+  
+  /* Body — Clean sans-serif */
+  --size-body: 17px;
+  --size-body-sm: 15px;
+  --size-body-xs: 13px;
+  
+  /* Letter spacing for headings */
+  --letter-spacing-heading: 0.02em;
+  
+  /* ─── Spacing Scale (ONLY these values) ─────────────────────────────────── */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 40px;
+  --space-5: 64px;
+  
+  /* ─── Radii ────────────────────────────────────────────────────────────── */
+  --radius: 12px;
+  
+  /* ─── Transitions ──────────────────────────────────────────────────────── */
+  --transition-duration: 180ms;
+  --transition-easing: ease-in-out;
+  --transition: var(--transition-duration) var(--transition-easing);
+  
+  /* ─── Layout ───────────────────────────────────────────────────────────── */
+  --layout-primary-width: 70%;
+  --layout-secondary-width: 30%;
+  --layout-gap: var(--space-4);
+}
